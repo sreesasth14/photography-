@@ -499,3 +499,15 @@ html {
         flex-direction: column;
     }
 }
+@media (max-width: 768px) {
+    .hero {
+        height: 100vh;
+        max-height: 100vh;
+        min-height: auto;
+    }
+    
+    .about {
+        margin-top: 0;
+        padding-top: 80px;
+    }
+}
