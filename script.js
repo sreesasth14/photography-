@@ -110,14 +110,7 @@ if (contactForm) {
     });
 }
 
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
-    const hero = document.querySelector('.hero');
-    const scrolled = window.pageYOffset;
-    if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-});
+
 
 // Gallery lightbox effect (simple click to enlarge)
 document.querySelectorAll('.gallery-item img').forEach(img => {
