@@ -179,13 +179,16 @@ html {
 /* Hero Section */
 .hero {
     height: 100vh;
+    max-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                url('https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1600') center/cover no-repeat;
+                url('YOUR_IMAGE_URL') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     color: var(--light-text);
+    overflow: hidden;
+    z-index: 1;
 }
 
 .hero-content {
@@ -262,6 +265,9 @@ html {
 .about {
     padding: 100px 0;
     background: var(--secondary-color);
+    position: relative;
+    z-index: 2;
+    margin-top: 0;
 }
 
 .section-title {
