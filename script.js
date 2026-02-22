@@ -57,11 +57,10 @@ document.querySelectorAll('.gallery-item').forEach((item, index) => {
 });
 
 // Observe gallery items
-document.querySelectorAll('.gallery-item').forEach(item => {
-    item.style.opacity = '0';
-    item.style.transform = 'translateY(30px)';
-    item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(item);
+// Simple gallery display - no animation
+document.querySelectorAll('.gallery-item').forEach((item) => {
+    item.style.opacity = '1';
+    item.style.transform = 'none';
 });
 
 // Form submission handling
