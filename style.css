@@ -127,7 +127,7 @@ html {
     font-weight: 700;
     margin-bottom: 1rem;
     opacity: 0;
-    animation: fadeInUp 1s ease forwards;
+    
 }
 
 .hero-subtitle {
@@ -135,7 +135,7 @@ html {
     font-weight: 300;
     margin-bottom: 2rem;
     opacity: 0;
-    animation: fadeInUp 1s ease 0.3s forwards;
+    
 }
 
 .cta-button {
@@ -148,7 +148,7 @@ html {
     border-radius: 50px;
     transition: all 0.3s ease;
     opacity: 0;
-    animation: fadeInUp 1s ease 0.6s forwards;
+    
 }
 
 .cta-button:hover {
