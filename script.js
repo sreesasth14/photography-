@@ -44,20 +44,17 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Intersection Observer for fade-in animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
+// Aperture Gallery Animation
+document.querySelectorAll('.gallery-item').forEach((item, index) => {
+    item.style.opacity = '0';
+    item.style.transform = 'scale(0.5) rotate(20deg)';
+    item.style.filter = 'blur(10px) brightness(0)';
+    item.style.transition = 'all 1s cubic-bezier(0.34, 1.56, 0.64, 1)';
+    
+    setTimeout(() => {
+        observer.observe(item);
+    }, index * 150);
+});
 
 // Observe gallery items
 document.querySelectorAll('.gallery-item').forEach(item => {
