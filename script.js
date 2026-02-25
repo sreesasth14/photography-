@@ -73,7 +73,33 @@ window.addEventListener('scroll', () => {
 });
 
 // ============= GALLERY ANIMATIONS =============
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
 
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'perspective(1000px) rotateY(0deg) scale(1)';
+            entry.target.style.filter = 'blur(0) brightness(1)';
+        }
+    });
+}, observerOptions);
+
+// Aperture Gallery Animation
+document.querySelectorAll('.gallery-item').forEach((item, index) => {
+    item.style.opacity = '0';
+    item.style.transform = 'perspective(1000px) scale(0.5) rotate(20deg)';
+    item.style.filter = 'blur(10px) brightness(0)';
+    item.style.transition = 'all 1s cubic-bezier(0.34, 1.56, 0.64, 1)';
+    item.style.transformStyle = 'preserve-3d';
+    
+    setTimeout(() => {
+        observer.observe(item);
+    }, index * 150);
+});
 
 // ============= FORM SUBMISSION =============
 
